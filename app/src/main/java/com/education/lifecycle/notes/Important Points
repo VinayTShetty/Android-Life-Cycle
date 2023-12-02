@@ -1,0 +1,36 @@
+The Android Activity lifecycle consists of a series of callback methods that are invoked at different stages of an activity's existence.
+Understanding these lifecycle methods is crucial for properly managing an Android app's behavior and resources.
+Here's an explanation of each significant lifecycle method:
+
+onCreate(Bundle savedInstanceState):
+***********************************
+Called when the activity is first created.
+This is where you perform one-time initialization, such as creating UI components and setting up data.
+The savedInstanceState parameter contains the saved state of the activity in case it was previously destroyed and recreated.
+
+onStart():
+***********************************
+Called when the activity becomes visible to the user.
+This is a good place to start animations, acquire resources, or perform any operations that should be done when the activity is about to become interactive.
+
+onResume():
+***********************************
+Called when the activity is about to start interacting with the user.
+This is where you should start anything that was paused or stopped in onPause, such as animations or refreshing data.
+
+onPause():
+***********************************
+Called when the activity is no longer in the foreground but still visible.
+This is where you should pause ongoing operations that consume CPU or system resources, such as animations or threads.
+
+onStop():
+***********************************
+Called when the activity is no longer visible to the user.
+This is a good place to release resources that are no longer needed, as the activity is not actively being used.
+
+onDestroy():
+***********************************
+
+Called before the activity is destroyed.
+This is where you should clean up resources, unregister receivers, and perform any final cleanup.
+Additionally, there are two methods related to handling configuration changes:
